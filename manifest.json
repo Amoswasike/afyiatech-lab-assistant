@@ -1,0 +1,61 @@
+{
+  "id": "com.afyiatech.labassistant",
+  "name": "AfyiaTech Clinical Lab Assistant",
+  "short_name": "AfyiaTech",
+  "description": "Standardized unit conversions (mmol/L, nmol/L) and real-time clinical decision support interpretation metrics.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#F9FAFB",
+  "theme_color": "#003366",
+  "categories": ["medical", "productivity"],
+  "icons": [
+    {
+      "src": "./assets/icon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/icon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/icon-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "./screenshots/mobile.png",
+      "sizes": "493x973",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "AfyiaTech Mobile Interface View"
+    },
+    {
+      "src": "./screenshots/desktop.png",
+      "sizes": "1847x922",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "AfyiaTech Desktop Dashboard Layout"
+    }
+  ]
+}

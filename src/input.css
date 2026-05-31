@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+/* AFYIA TECH COMPREHENSIVE BRAND SYSTEM */
+@theme {
+  --color-brand-blue: #003366;  /* Deep Medical Blue (Trust, Authority) */
+  --color-brand-teal: #008080;  /* Corporate Teal (Precision, Tech) */
+  --color-brand-green: #32CD32; /* Lime Green (Vitality, Action) */
+}
+
+
+/* Suppress Chrome's default outline while retaining Tailwind's custom ring utility */
+input:focus,
+select:focus,
+button:focus {
+  outline: 2px solid transparent !important;
+  outline-offset: 2px !important;
+}

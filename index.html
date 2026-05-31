@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>AfyiaTech Clinical Lab Assistant</title>
+
+  <meta name="description" content="An installable, offline-first clinical laboratory unit converter. Standardize metabolic test values to mmol/L or nmol/L and get real-time diagnostic risk evaluations instantly." />
+  <meta name="keywords" content="lab unit converter, mmol/L converter, nmol/L conversion, clinical laboratory assistant, cholesterol ratio calculator, medical calculator, PWA medical app, AfyiaTech" />
+  <meta name="author" content="Amos Wasike (Wako)" />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="manifest" href="./manifest.json" />
+  <meta name="theme-color" content="#003366" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="AfyiaTech" />
+
+  <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/icon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/icon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+ 
+  <link href="./src/output.css" rel="stylesheet">
+
+  <meta property="og:site_name" content="AfyiaTech Systems" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lab-units-converter.netlify.app/" />
+  <meta property="og:title" content="AfyiaTech Clinical Lab Assistant 🔬⚡" />
+  <meta property="og:description" content="Convert medical metrics to standard international units (mmol/L, nmol/L) with real-time diagnostic severity interpretation—even completely offline." />
+  <meta property="og:image" content="https://lab-units-converter.netlify.app/screenshots/desktop.png" />
+  <meta property="og:image:width" content="1847" />
+  <meta property="og:image:height" content="922" />
+  <meta property="og:image:type" content="image/png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://lab-units-converter.netlify.app/" />
+  <meta name="twitter:title" content="AfyiaTech Clinical Lab Assistant 🔬⚡" />
+  <meta name="twitter:description" content="Fast, offline-first PWA for medical unit standardizations and real-time lipid risk tracking metrics." />
+  <meta name="twitter:image" content="https://lab-units-converter.netlify.app/screenshots/desktop.png" />
+
+  <!-- Single Authoritative Script Module Hook -->
+  <script type="module" src="./js/script.js" defer></script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+
+    <!-- PWA INSTALL BANNER BUTTON ACTION -->
+    <button
+      id="installBtn"
+      aria-label="Install AfyiaTech Clinical Lab Assistant application to your device"
+      class="fixed top-3 right-3 z-50 bg-brand-green text-white px-3 py-2 rounded-full shadow-lg text-xs opacity-0 pointer-events-none hover:brightness-95 font-medium transition-all"
+    >
+      Install
+    </button>
+
+    <!-- MAIN APP WRAPPER CONTAINER -->
+    <div class="max-w-md mx-auto min-h-screen bg-white shadow-md border-x border-gray-100">
+
+      <!-- APP LOGO BRAND HEADER -->
+      <header class="sticky top-0 bg-brand-blue border-b border-brand-teal/20 px-4 py-4 z-40 shadow-sm">
+        <h1 class="text-xl font-bold text-white tracking-tight">
+         AfyiaTech Clinical Lab Assistant
+        </h1>
+        <p class="text-xs text-teal-100/80 mt-0.5">
+          Unit Conversion • Result Interpretation • Clinical Decision Support
+        </p>
+      </header>
+
+      <!-- FIXED: Consolidated single structural layout element wrapper -->
+      <main class="p-4 space-y-4">
+
+        <!-- CORE PURPOSE BANNER -->
+        <div class="bg-blue-50/50 border border-brand-teal/20 p-3 rounded-xl flex items-start gap-2.5 shadow-2xs">
+          <svg class="w-5 h-5 text-brand-teal shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <div>
+            <p class="text-xs font-semibold text-brand-blue uppercase tracking-wider">Standardization Tool</p>
+            <p class="text-xs text-gray-600 mt-0.5 leading-relaxed">
+              Convert conventional laboratory values into standardized international metrics (<strong class="text-brand-blue">mmol/L</strong> or <strong class="text-brand-blue">nmol/L</strong>) with automatic clinical severity grading.
+              For <strong class="text-brand-blue">Chol/HDL Ratio</strong>, enter both parameters using identical unit profiles to calculate an absolute cardiovascular risk coefficient.
+            </p>
+          </div>
+        </div>
+
+        <!-- COMPACT LAYERED FORM CARD (Pure White Surface Layer) -->
+        <div class="bg-white p-4 rounded-xl border border-gray-200/80 shadow-xs space-y-5">
+          
+          <!-- Test Selection Input Field -->
+          <div>
+            <label for="test" class="block text-xs font-bold uppercase tracking-wider text-brand-blue">Select Lab Test</label>
+            <select
+              id="test"
+              class="w-full mt-1.5 p-3 bg-gray-50/50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-teal focus:border-brand-teal text-gray-900 font-medium transition-all"
+            >
+              <option value="phosphate">Phosphate</option>
+              <option value="magnesium">Magnesium</option>
+              <option value="uric_acid">Uric Acid</option>
+              <option value="vitamin_d">Vitamin D, 25-Hydroxy</option>
+              <option value="chol_hdl_ratio">Chol/HDL Ratio</option>
+            </select>
+          </div>
+
+          <!-- Standard Lab Test Inputs Field Box -->
+          <div id="standardInputWrapper">
+            <label for="value" class="block text-xs font-bold uppercase tracking-wider text-brand-blue">Observed Lab Value</label>
+            <div class="flex gap-2 mt-1.5">
+              <input
+                type="number"
+                id="value"
+                step="any"
+                inputmode="decimal"
+                placeholder="Enter numeric value"
+                class="flex-1 p-3 bg-gray-50/50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-teal focus:border-brand-teal text-gray-900 font-medium transition-all"
+              />
+              <button
+                id="clearValue"
+                aria-label="Clear current input value"
+                class="px-4 py-2 bg-red-50 text-red-700 hover:bg-red-100 font-semibold border border-red-200 rounded-lg transition-colors text-sm"
+                type="button"
+              >
+                Clear
+              </button>
+            </div>
+          </div>
+
+          <!-- Dual Lipid Panel Input Field Block (Hidden by default) -->
+          <div id="cholesterolInputs" class="hidden space-y-4" aria-hidden="true">
+            <div>
+              <label for="totalChol" class="block text-xs font-bold uppercase tracking-wider text-brand-blue">Total Cholesterol Value</label>
+              <input
+                type="number"
+                id="totalChol"
+                step="any"
+                inputmode="decimal"
+                placeholder="Enter total cholesterol"
+                class="w-full mt-1.5 p-3 bg-gray-50/50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-teal focus:border-brand-teal text-gray-900 font-medium transition-all"
+              />
+            </div>
+
+            <div>
+              <label for="hdl" class="block text-xs font-bold uppercase tracking-wider text-brand-blue">HDL Cholesterol Value</label>
+              <input
+                type="number"
+                id="hdl"
+                step="any"
+                inputmode="decimal"
+                placeholder="Enter HDL value"
+                class="w-full mt-1.5 p-3 bg-gray-50/50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-teal focus:border-brand-teal text-gray-900 font-medium transition-all"
+              />
+            </div>
+          </div>
+
+          <!-- Source Unit Selection Box Dropdown -->
+          <div id="unitWrapper">
+            <label for="unit" class="block text-xs font-bold uppercase tracking-wider text-brand-blue">Measurement Unit (From)</label>
+            <select
+              id="unit"
+              class="w-full mt-1.5 p-3 bg-gray-50/50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-teal focus:border-brand-teal text-gray-900 font-medium transition-all"
+            ></select>
+          </div>
+
+          <!-- LIVE DYNAMIC REAL-TIME EVALUATION OUTPUT AREA -->
+          <div 
+            id="result" 
+            role="region" 
+            aria-live="polite" 
+            aria-atomic="true" 
+            class="mt-6 p-4 rounded-lg bg-gray-50 border border-gray-200 text-gray-600 text-sm font-medium transition-all"
+          >
+            <p>Enter a value to generate clinical interpretation.</p>
+          </div>
+
+        </div> 
+      </main>
+    </div>
+</body>
+</html>
