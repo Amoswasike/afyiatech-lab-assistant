@@ -17,7 +17,7 @@ Designed with a high-performance, completely serverless, offline-first architect
 
 | Deployment Vector | Target Location Link | Deployment Status |
 | :--- | :--- | :--- |
-| **🌐 Live Production Application** | [https://afyiatech-lab-assistant.netlify.app](https://afyiatech-lab-assistant.netlify.app) | [![Netlify Status](https://api.netlify.com/api/v1/badges/a11y-verified/deploy-status)](https://afyiatech-lab-assistant.netlify.app) |
+| **🌐 Live Production Application** | [https://afyiatech-lab-assistant.netlify.app](https://afyiatech-lab-assistant.netlify.app) | [![Netlify Status](https://api.netlify.com/api/v1/badges/ef4c14a7-e9e3-4309-9a7e-030191f4911a/deploy-status)](https://app.netlify.com/projects/afyiatech-lab-assistant/deploys)|
 | **📦 Controlled Source Code** | [https://github.com/Amoswasike/afyiatech-lab-assistant](https://github.com/Amoswasike/afyiatech-lab-assistant) | `main branch` |
 
 ---
