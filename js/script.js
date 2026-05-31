@@ -102,7 +102,7 @@ function handleAppRender() {
 
   // 2. Empty State Guard
   if (state.value === null) {
-    el.innerHTML = `<p class="text-sm test-gray-500">Enter a value to generate clinical
+    el.innerHTML = `<p class="text-sm text-gray-500">Enter a value to generate clinical
       interpretation</p>`;
       return;
   }
@@ -247,3 +247,17 @@ function hideInstall() {
 
 // Start application process
 init();
+
+
+// Register the Service Worker for offline PWA capabilities
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then((registration) => {
+        console.log('⚡ ServiceWorker registration successful with scope: ', registration.scope);
+      })
+      .catch((error) => {
+        console.error('❌ ServiceWorker registration failed: ', error);
+      });
+  });
+}

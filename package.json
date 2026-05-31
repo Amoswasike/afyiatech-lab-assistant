@@ -1,4 +1,11 @@
 {
+  "name": "afyiatech-lab-assistant",
+  "version": "1.0.0",
+  "description": "Clinical laboratory unit converter and decision support PWA",
+  "main": "js/script.js",
+  "scripts": {
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css"
+  },
   "dependencies": {
     "@tailwindcss/cli": "^4.3.0",
     "tailwindcss": "^4.3.0"

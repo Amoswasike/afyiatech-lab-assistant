@@ -1,9 +1,10 @@
 
-# 🧪 Lab Unit Converter (PWA)
+# 🧪 AfyiaTech Lab Assistant (PWA)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a11y-verified/deploy-status)](https://lab-units-converter.netlify.app)
-![Repo Size](https://img.shields.io/github/repo-size/Amoswasike/lab-units-converter?color=0066cc)
-![Last Commit](https://img.shields.io/github/last-commit/Amoswasike/lab-units-converter?color=669900&label=last%20commit)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a11y-verified/deploy-status)](https://afyiatech-lab-assistant.netlify.app)
+![Version](https://img.shields.io/badge/version-1.0.0-0066cc)
+![Repo Size](https://img.shields.io/github/repo-size/Amoswasike/afyiatech-lab-assistant?color=0066cc)
+![Last Commit](https://img.shields.io/github/last-commit/Amoswasike/afyiatech-lab-assistant?color=669900&label=last%20commit)
 ![PWA Ready](https://img.shields.io/badge/PWA-ready-669900)
 
 A lightweight, installable, enterprise-grade **Progressive Web App (PWA)** built to standardize conventional laboratory values into international metric equivalents (**mmol/L** and **nmol/L**) with automatic real-time clinical severity grading.
@@ -16,8 +17,8 @@ Designed with a high-performance, completely serverless, offline-first architect
 
 | Deployment Vector | Target Location Link | Deployment Status |
 | :--- | :--- | :--- |
-| **🌐 Live Production Application** | [https://lab-units-converter.netlify.app](https://lab-units-converter.netlify.app) | ![Netlify Status](https://api.netlify.com/api/v1/badges/a11y-verified/deploy-status) |
-| **📦 Controlled Source Code** | [https://github.com/Amoswasike/lab-units-converter](https://github.com/Amoswasike/lab-units-converter) | `main branch` |
+| **🌐 Live Production Application** | [https://afyiatech-lab-assistant.netlify.app](https://afyiatech-lab-assistant.netlify.app) | [![Netlify Status](https://api.netlify.com/api/v1/badges/a11y-verified/deploy-status)](https://afyiatech-lab-assistant.netlify.app) |
+| **📦 Controlled Source Code** | [https://github.com/Amoswasike/afyiatech-lab-assistant](https://github.com/Amoswasike/afyiatech-lab-assistant) | `main branch` |
 
 ---
 
@@ -37,7 +38,7 @@ Designed with a high-performance, completely serverless, offline-first architect
 
 ## ✨ System Operations & Core Scope
 
-Lab Unit Converter mirrors real-world clinical laboratory workflows by parsing unstructured, highly localized mass inputs and resolving them into clean, universally referenceable diagnostic outcomes.
+AfyiaTech Lab Assistant mirrors real-world clinical laboratory workflows by parsing unstructured, highly localized mass inputs and resolving them into clean, universally referenceable diagnostic outcomes.
 
 ```text
 [Raw Input Value] ──► [Conversion Matrix] ──► [SI Normalization] ──► [Severity Brackets] ──► [Dynamic UI Sync]
@@ -63,7 +64,7 @@ Lab Unit Converter mirrors real-world clinical laboratory workflows by parsing u
 ### 📊 Result Interpretation Matrix
 
 * **Dynamic Severity Tiers:** Instantly flags inputs across `LOW`, `NORMAL`, `HIGH`, `INSUFFICIENCY`, and `CRITICAL` statuses.
-* **Visual Semantic Grading:** Adapts layout surfaces dynamically using your specific corporate brand tones:
+* **Visual Semantic Grading:** Adapts layout surfaces dynamically using specific corporate brand tones:
 * 🟢 **Optimal Profile:** Brand Green (`#32CD32`) for reassuring health baselines.
 * 🟡 **Caution Window:** Warm yellow for borderline metabolic abnormalities.
 * 🔴 **Emergency Flag:** Pulsating crimson red alerting practitioners to panic values.
@@ -126,7 +127,7 @@ AFYIATECH-LABS/
 │   ├── data.js              # Reference Range Limits and Typography Strings
 │   ├── script.js            # Main Core App Orchestrator & PWA Event Handler
 │   ├── state.js             # Centralized Immutable Application State Manager
-│   └── ui.js                # High-Speed DOM Manipulation & Accessibly Controls
+│   └── ui.js                # High-Speed DOM Manipulation & Accessibility Controls
 ├── screenshots/             # Manifest Presentation Mockups
 │   ├── desktop.png          # App View Capture Profile (1847x922)
 │   └── mobile.png           # App View Capture Profile (493x973)
@@ -175,13 +176,3 @@ This tool is constructed exclusively for technical evaluation, workflow referenc
 * **GitHub:** [@Amoswasike](https://www.google.com/search?q=https://github.com/Amoswasike)
 * **Specialties:** Progressive Web Applications, Responsive Clean Code Architecture, Fluid Interface Layouts.
 
----
-
-```text
-✔ Deployed on Netlify  ✔ PWA Enabled  ✔ Offline Caching Active  ✔ Portfolio-Ready Architecture
-
-```
-
-```
-
-```

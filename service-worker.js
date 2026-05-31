@@ -3,28 +3,28 @@
  * Core Architecture: Cache-First Strategy with Dynamic Network Fallback
  */
 
-const CACHE_NAME = "afyiatech-cache-v1";
+const CACHE_NAME = "afyiatech-cache-v1.0.0";
 
 // Explicit file system inventory matching your PWA asset structure
 const ASSETS_TO_CACHE = [
-  "./",
-  "./index.html",
-  "./src/output.css",
-  "./js/script.js",
-  "./js/ui.js",
-  "./js/data.js",
-  "./js/state.js",
-  "./js/conversions.js",
-  "./manifest.json",
-  "./assets/favicon.ico",
-  "./assets/icon-16x16.png",
-  "./assets/icon-32x32.png",
-  "./assets/apple-touch-icon.png",
-  "./assets/icon-192x192.png",
-  "./assets/icon-512x512.png",
-  "./assets/icon-maskable.png",
-  "./screenshots/mobile.png",
-  "./screenshots/desktop.png"
+  "/",
+  "index.html",
+  "src/output.css",
+  "js/script.js",
+  "js/ui.js",
+  "js/data.js",
+  "js/state.js",
+  "js/conversions.js",
+  "manifest.json",
+  "assets/favicon.ico",
+  "assets/icon-16x16.png",
+  "assets/icon-32x32.png",
+  "assets/apple-touch-icon.png",
+  "assets/icon-192x192.png",
+  "assets/icon-512x512.png",
+  "assets/icon-maskable.png",
+  "screenshots/mobile.png",
+  "screenshots/desktop.png"
 ];
 
 // 1. INSTALL EVENT: Creates the cache vault and stores all core shell assets
@@ -71,12 +71,12 @@ self.addEventListener("fetch", (event) => {
       // If the asset isn't cached, fetch it over the live network stream
       return fetch(event.request)
         .then((networkResponse) => {
-          // Safeguard check: Avoid caching broken, failing, or third-party extension requests
-          if (!networkResponse || networkResponse.status !== 200 || networkResponse.type !== "basic") {
+          // Safeguard check: Avoid caching broken or failing server responses
+          if (!networkResponse || networkResponse.status !== 200) {
             return networkResponse;
           }
 
-          // Clone the response stream to save a copy into the background cache
+          // Clone the response stream to save a copy into the background cache safely
           const responseToCache = networkResponse.clone();
           caches.open(CACHE_NAME).then((cache) => {
             cache.put(event.request, responseToCache);
@@ -86,7 +86,11 @@ self.addEventListener("fetch", (event) => {
         })
         .catch((err) => {
           console.warn("[Service Worker] Fetch request failed. Device is entirely offline:", event.request.url, err);
-          // Optional: Return a custom fallback resource page here if index.html is dropped
+          
+          // If a main page navigation requests fails completely offline, return the root shell
+          if (event.request.mode === "navigate") {
+            return caches.match("index.html");
+          }
         });
     })
   );
