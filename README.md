@@ -1,7 +1,7 @@
 
 # 🧪 AfyiaTech Lab Assistant (PWA)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a11y-verified/deploy-status)](https://afyiatech-lab-assistant.netlify.app)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ef4c14a7-e9e3-4309-9a7e-030191f4911a/deploy-status)](https://app.netlify.com/projects/afyiatech-lab-assistant/deploys)
 ![Version](https://img.shields.io/badge/version-1.0.0-0066cc)
 ![Repo Size](https://img.shields.io/github/repo-size/Amoswasike/afyiatech-lab-assistant?color=0066cc)
 ![Last Commit](https://img.shields.io/github/last-commit/Amoswasike/afyiatech-lab-assistant?color=669900&label=last%20commit)
