@@ -120,17 +120,15 @@ function handleAppRender() {
       return;
   }
 
-  // 4. Deterministic Clinical Metric Tree
+ // 4. Deterministic Clinical Metric Tree
   let status = "NORMAL";
   let messageKey = "Normal";
 
   if (state.test === "vitamin_d") {
-    // Redirect to Specialized 6-tier vap engine
     const vitDData = getVitaminDStatus(standardizedValue);
-    status = vitDData.label;
+    status = vitDData.label; 
     messageKey = vitDData.key;
   } else {
-    // Stndard 5-tier processing tree for minerals
     if (standardizedValue <= crit.low) {
       status = "CRITICAL LOW";
       messageKey = "CriticalLow";

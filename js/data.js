@@ -48,23 +48,21 @@ export const criticalRanges = {
 };
 
 export const vitaminDReferenceMap = {
-  severeDeficiency:{ min: 0, max: 24.9, label: "Severe Deficiency" },
-  deficienncy: { min: 25, max: 49.9, label: "Dificiency" },
+  severeDeficiency: { min: 0, max: 24.9, label: "Severe Deficiency" },
+  deficiency: { min: 25, max: 49.9, label: "Deficiency" },
   insufficiency: { min: 50, max: 74.9, label: "Insufficiency" },
-  sufficiency: { min: 75, max: 250, label: "Suffient" },
+  sufficiency: { min: 75, max: 250, label: "Sufficient" },
   excess: { min: 250.1, max: 375, label: "Possible Excess" },
-  toxicity: { min: 375.1, max: Infinity, label: "Potential Toxixity" }
-
+  toxicity: { min: 375.1, max: Infinity, label: "Potential Toxicity" }
 };
 
-export const  interpretations = {
+export const interpretations = {
   phosphate: {
     CriticalLow: "Critical hypophosphatemia! Severe risk of respiratory or cardiac failure.",
     Low: "Possible hypophosphatemia. Monitor levels closely.",
     Normal: "Normal phosphate level.",
     High: "Possible hyperphosphatemia. Evaluate renal function.",
     CriticalHigh: "Critical hyperphosphatemia! Risk of severe hypocalcemia and tetany."
-
   },
   magnesium: {
     CriticalLow: "Critical hypomagnesemia! High risk of neuromuscular irritability and cardiac arrhythmias.",
@@ -102,11 +100,11 @@ export function interpretRatio(ratio) {
  * @param {number} nmolValue
  * @returns {object} { label, messageKey }
  */
- export function getVitaminDStatus(nmolValue) {
-   if (nmolValue <= 24.9) return { label: "SEVERE DIFICIENCY", key: "SevereDeficiency" };
-   if (nmolValue <= 49.9) return { label: "DEFICIENCY", key: "Dificiency" };
-   if (nmolValue <= 74.9) return { label: "INSUFFICIENCY", key: "Insufficiency" };
-   if (nmolValue <= 250.0) return { label: "SUFFICIENT", key: "Sufficient" };
-   if (nmolValue <= 375.0) return { label: "POSSIBLE EXCESS", key: "PossibleExcess" };
-   return { label: "POTENTIAL TOXICITY", key: "PotentialToxicity"};
- }
+export function getVitaminDStatus(nmolValue) {
+  if (nmolValue <= 24.9) return { label: "SEVERE DEFICIENCY", key: "SevereDeficiency" };
+  if (nmolValue <= 49.9) return { label: "DEFICIENCY", key: "Deficiency" };
+  if (nmolValue <= 74.9) return { label: "INSUFFICIENCY", key: "Insufficiency" };
+  if (nmolValue <= 250.0) return { label: "SUFFICIENT", key: "Sufficient" };
+  if (nmolValue <= 375.0) return { label: "POSSIBLE EXCESS", key: "PossibleExcess" };
+  return { label: "POTENTIAL TOXICITY", key: "PotentialToxicity" };
+}

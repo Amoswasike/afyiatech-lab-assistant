@@ -3,7 +3,7 @@
  * Core Architecture: Cache-First Strategy with Dynamic Network Fallback
  */
 
-const CACHE_NAME = "afyiatech-cache-v1.0.0";
+const CACHE_NAME = "afyiatech-cache-v1.0.1"; // Versioned cache name for future-proofing updates and invalidation
 
 // Explicit file system inventory matching your PWA asset structure
 const ASSETS_TO_CACHE = [

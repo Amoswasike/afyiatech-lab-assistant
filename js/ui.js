@@ -108,22 +108,39 @@ export function renderResults(interpretationResult, conversionResult) {
   let themeClasses = "bg-gray-50 border-gray-200 text-gray-800";
   let badgeClasses = "bg-gray-200 text-gray-700";
 
+  // 1. Green Theme: Optimal / Healthy baseline targets
   if (status === "NORMAL" || status === "SUFFICIENT") {
     themeClasses = "bg-green-50 border-brand-green/30 text-green-950";
-    badgeClasses = "bg-brand-green  text-white font-bold shadow-sm";
-  } else if (status === "LOW" || status === "HIGH" || status === "INSUFFICIENCY" || status === "POSSIBLE EXCESS") {
+    badgeClasses = "bg-brand-green text-white font-bold shadow-sm";
+
+  // 2. Yellow Theme: Borderline warning / Inadequate trends
+  } else if (
+    status === "LOW" || 
+    status === "HIGH" || 
+    status === "INSUFFICIENCY" || 
+    status === "DEFICIENCY" || 
+    status === "POSSIBLE EXCESS"
+  ) {
     themeClasses = "bg-yellow-50 border-yellow-300 text-yellow-950";
     badgeClasses = "bg-yellow-400 text-yellow-950 font-semibold";
-  } else if (isCritical || status.includes("CRITICAL") || status.includes("SEVERE") || status.includes("TOXICITY")) {
+
+  // 3. Red Theme: High-alert panic limits / Dangerous clinical indicators
+  } else if (
+    isCritical || 
+    status.includes("CRITICAL") || 
+    status.includes("SEVERE") || 
+    status.includes("TOXICITY")
+  ) {
     themeClasses = "bg-red-50 border-red-300 text-red-950 animate-pulse";
     badgeClasses = "bg-red-600 text-white font-bold shadow-sm";
+
+  // 4. Blue Theme: Fallback processing rules for calculations/ratios
   } else {
-    // Fallback card styles for standard complete ratios
     themeClasses = "bg-blue-50/60 border-brand-blue/20 text-brand-blue";
     badgeClasses = "bg-brand-blue text-white font-semibold shadow-sm";
   }
 
- elements.resultPanel.className = `p-4 rounded-xl border-2 transition-all shadow-sm ${themeClasses}`;
+  elements.resultPanel.className = `p-4 rounded-xl border-2 transition-all shadow-sm ${themeClasses}`;
 
   elements.resultPanel.innerHTML = `
     <div class="flex items-center justify-between mb-2">
