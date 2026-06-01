@@ -1,6 +1,6 @@
 {
   "name": "afyiatech-lab-assistant",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Clinical laboratory unit converter and decision support PWA",
   "main": "js/script.js",
   "scripts": {
